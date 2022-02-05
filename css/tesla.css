@@ -8,12 +8,14 @@ body {
   scroll-behavior: smooth;
 }
 .img {
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
   background-size: cover;
   background-position: center;
 }
 .img-1 {
+  position: relative;
   background-image: url("../images/3.avif");
 }
 .img-2 {
@@ -104,6 +106,7 @@ section .subtitle {
 
 /*----------------buttons-----------------*/
 .button-container {
+  overflow: hidden;
   position: absolute;
   bottom: 16%;
   left: 50%;
@@ -152,32 +155,31 @@ section .subtitle {
   text-decoration: none;
 }
 /*----------------responsive-----------*/
+@media screen and (max-width: 400) {
+  .button {
+    padding: 0.9rem 2rem;
+  }
+}
 @media (max-width: 640px) {
   .button-container {
     width: 100%;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 3rem;
   }
   .button-primary {
     margin-bottom: 0.6rem;
     width: 100%;
-    font-size: 2rem;
   }
-  .button {
-    padding: 1rem 3rem;
-  }
-
+  /* .footer ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+  } */
   .button-secondary {
     width: 100%;
-    font-size: 2rem;
-  }
-  .title {
-    font-size: 3.5rem;
-  }
-  .subtitle {
-    font-size: 1.2rem;
   }
   .footer-bar ul {
     display: flex;
