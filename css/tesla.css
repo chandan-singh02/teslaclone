@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 body {
-  overflow-x: hidden;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 .img {
   overflow: hidden;
@@ -155,7 +155,10 @@ section .subtitle {
   text-decoration: none;
 }
 /*----------------responsive-----------*/
-@media screen and (max-width: 400) {
+@media screen and (max-width: 400px) {
+  body {
+    overflow: hidden;
+  }
   .button {
     padding: 0.9rem 2rem;
   }
@@ -196,4 +199,65 @@ section .subtitle {
   .button-container {
     width: 50%;
   }
+}
+
+/*mobile navigation*/
+
+.navigation {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 10;
+  right: 0;
+  width: 60%;
+  max-width: 25rem;
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.5, 0, 0, 0.75);
+}
+
+.navigation.is-active {
+  transform: translateX(0);
+}
+
+.navigation ul {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.navigation ul li {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 1.2rem;
+  padding: 0.6rem 0;
+  padding-left: 1rem;
+  margin-bottom: 0.4rem;
+  transition: background-color 0.33s ease;
+  text-decoration: none;
+  list-style-type: none;
+}
+.navigation ul li a {
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.nav__link {
+  color: #393c41;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.navigation ul li:hover {
+  background: #0000000d;
+}
+
+.close {
+  text-align: right;
+  margin: 1rem 2rem;
+}
+
+.nav-close {
+  width: 2rem;
+  cursor: pointer;
 }
